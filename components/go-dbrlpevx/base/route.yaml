@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: go-dbrlpevx
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: go-dbrlpevx 
+  name: go-dbrlpevx
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: go-dbrlpevx
+    weight: 100 
